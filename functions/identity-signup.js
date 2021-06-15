@@ -3,7 +3,9 @@ q = faunadb.query;
 const client = new faunadb.Client({ secret: process.env.FAUNA_SECRET_KEY });
 
 exports.handler = async function(event, context) {
-    const user = event.body.payload.user;
+    console.log(event);
+
+    const user = event.body.user;
 
     await client.query(
         q.Create(
